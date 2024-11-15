@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:aksara_sunda/main.dart';
 import 'package:aksara_sunda/page/home_page.dart';
 import 'package:aksara_sunda/page/image_processing_page.dart';
+import 'package:aksara_sunda/page/kuis_page.dart';
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,17 +36,9 @@ class _MainPageState extends State<MainPage> {
       case 0:
         return HomePage();
       case 1:
-        return Container(
-          child: Center(
-            child: Text("Kuis"),
-          ),
-        );
+        return KuisPage();
       default:
-        return Container(
-          child: Center(
-            child: Text("Home"),
-          ),
-        );
+        return HomePage();
     }
   }
 
@@ -81,12 +74,13 @@ class _MainPageState extends State<MainPage> {
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
+          color: Colors.transparent,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.1), // Warna bayangan
-              spreadRadius: 0.5,
-              blurRadius: 10,
-              offset: Offset(0, 0), // Bayangan muncul di atas
+              color: Theme.of(context).colorScheme.shadow, // Warna bayangan
+              spreadRadius: 5,
+              blurRadius: 30,
+              offset: Offset(0, 15), // Bayangan muncul di atas
             ),
           ],
         ),
@@ -96,6 +90,7 @@ class _MainPageState extends State<MainPage> {
             topRight: Radius.circular(20.r),
           ),
           child: BottomAppBar(
+            height: 60.h,
             notchMargin: 7.0,
             color: Theme.of(context).colorScheme.surface,
             shape: CircularNotchedRectangle(),

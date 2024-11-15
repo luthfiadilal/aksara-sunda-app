@@ -23,20 +23,34 @@ class ListKamusBox extends StatelessWidget {
                 children: <Widget>[
                   Align(
                     alignment: Alignment.center,
-                    child: Parent(
-                      style: kamusCardStyle,
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      height: 70.h,
+                      margin: EdgeInsets.only(top: 10, right: 16, left: 16),
+                      decoration: BoxDecoration(
+                          color:
+                              Theme.of(context).colorScheme.secondaryContainer,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Theme.of(context).colorScheme.shadow,
+                                spreadRadius: -5,
+                                blurRadius: 10,
+                                offset: Offset(2, 4))
+                          ]),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Txt(
-                                "Aksara\nSwara",
-                                style: mainTextStyle.clone()
-                                  ..textColor(Colors.black)
-                                  ..fontSize(16.sp)
-                                  ..margin(right: 15),
+                              Container(
+                                margin: EdgeInsets.only(right: 15),
+                                child: Text("Aksara\nSwara",
+                                    style: TextStyle(
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.bold),
+                                    maxLines: 2),
                               ),
                             ],
                           )
@@ -59,7 +73,7 @@ class ListKamusBox extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 20.w),
+          // SizedBox(width: 10.w),
           Expanded(
             child: Container(
               width: 100.w,
@@ -69,20 +83,34 @@ class ListKamusBox extends StatelessWidget {
                 children: <Widget>[
                   Align(
                     alignment: Alignment.center,
-                    child: Parent(
-                      style: kamusCardStyle,
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      height: 70.h,
+                      margin: EdgeInsets.only(top: 10, right: 16, left: 16),
+                      decoration: BoxDecoration(
+                          color:
+                              Theme.of(context).colorScheme.secondaryContainer,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Theme.of(context).colorScheme.shadow,
+                                spreadRadius: -5,
+                                blurRadius: 10,
+                                offset: Offset(2, 4))
+                          ]),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Txt(
-                                "Aksara\nngalagena",
-                                style: mainTextStyle.clone()
-                                  ..textColor(Colors.black)
-                                  ..fontSize(16.sp)
-                                  ..margin(right: 10),
+                              Container(
+                                margin: EdgeInsets.only(right: 12),
+                                child: Text("Aksara\nNgalagena",
+                                    style: TextStyle(
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.bold),
+                                    maxLines: 2),
                               ),
                             ],
                           )

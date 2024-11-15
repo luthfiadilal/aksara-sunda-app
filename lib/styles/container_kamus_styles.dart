@@ -6,8 +6,7 @@ final ParentStyle kamusStyle = ParentStyle()
   ..width(350.w)
   ..height(130.h)
   ..margin(top: 10, right: 16, left: 16)
-  ..borderRadius(all: 20.r)
-  ..background.color(Colors.yellow);
+  ..borderRadius(all: 20.r);
 
 // Definisikan gaya menggunakan ParentStyle
 final ParentStyle kamusCardStyle = ParentStyle()

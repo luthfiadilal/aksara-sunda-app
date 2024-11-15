@@ -217,8 +217,8 @@ class _ImageProcessingPageState extends State<ImageProcessingPage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 SvgPicture.asset(
-                                  width: 40.w,
-                                  height: 40.h,
+                                  width: 26.w,
+                                  height: 26.h,
                                   "images/gallery.svg",
                                   color: Color.fromARGB(255, 197, 164, 124),
                                 ),
@@ -258,8 +258,8 @@ class _ImageProcessingPageState extends State<ImageProcessingPage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: <Widget>[
                                 SvgPicture.asset(
-                                  width: 40.w,
-                                  height: 40.h,
+                                  width: 26.w,
+                                  height: 26.h,
                                   "images/camera.svg",
                                   color: Color.fromARGB(255, 197, 164, 124),
                                 ),
@@ -330,8 +330,8 @@ class _ImageProcessingPageState extends State<ImageProcessingPage> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: <Widget>[
                                     SvgPicture.asset(
-                                      width: 40.w,
-                                      height: 40.h,
+                                      width: 26.w,
+                                      height: 26.h,
                                       "images/ai.svg",
                                       color: Color.fromARGB(255, 197, 164, 124),
                                     ),

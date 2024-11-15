@@ -1,8 +1,11 @@
 import 'dart:math';
+import 'package:aksara_sunda/components/card_kamus.dart';
 import 'package:aksara_sunda/components/kamus_box.dart';
 import 'package:aksara_sunda/components/list_kamus_box.dart';
 import 'package:aksara_sunda/models/materi_view_model.dart';
 import 'package:aksara_sunda/page/drawing_page.dart';
+import 'package:aksara_sunda/page/showall_materi.dart';
+import 'package:aksara_sunda/repository/kamus_repository.dart';
 import 'package:aksara_sunda/styles/container_kamus_styles.dart';
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +42,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final KamusRepository kamusRepository = KamusRepository();
+    final List<Map<String, String>> daftarKamus =
+        kamusRepository.getKamusData();
     return Scaffold(
       body: Column(
         children: <Widget>[
@@ -59,7 +65,9 @@ class _HomePageState extends State<HomePage> {
                           right: 20.w), // Menggunakan ScreenUtil
                       child: Txt(
                         "Ayo Belajar Menulis Aksara Sunda",
-                        style: mainTextStyle,
+                        style: mainTextStyle
+                          ..clone()
+                          ..textColor(Colors.white),
                       ),
                     ),
                   ),
@@ -78,35 +86,56 @@ class _HomePageState extends State<HomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Txt(
-                "Kamus",
-                style: mainTextStyle.clone()
-                  ..fontSize(18.sp) // Menggunakan ScreenUtil
-                  ..margin(left: 20.w) // Menggunakan ScreenUtil
-                  ..fontWeight(FontWeight.normal),
+              Container(
+                margin: EdgeInsets.only(left: 20),
+                child: Text(
+                  "Kamus",
+                  style:
+                      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.normal),
+                ),
               ),
             ],
           ),
           Flexible(
-            child: ListKamusBox(),
+            child: ListView.builder(
+              padding: EdgeInsets.only(left: 12, right: 10),
+              scrollDirection: Axis.horizontal,
+              itemCount: daftarKamus.length,
+              itemBuilder: (context, index) {
+                return CardKamus(
+                    title: daftarKamus[index]["title"]!,
+                    image: daftarKamus[index]["image"]!,
+                    onTap: () {
+                      if (daftarKamus[index]['title'] == 'Aksara Swara') {}
+                    });
+              },
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Txt(
-                "Materi",
-                style: mainTextStyle.clone()
-                  ..fontSize(18.sp) // Menggunakan ScreenUtil
-                  ..margin(left: 20.w) // Menggunakan ScreenUtil
-                  ..fontWeight(FontWeight.normal),
+              Container(
+                margin: EdgeInsets.only(left: 20),
+                child: Text(
+                  "Materi",
+                  style:
+                      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.normal),
+                ),
               ),
-              Txt(
-                "show all",
-                style: mainTextStyle.clone()
-                  ..textColor(Color.fromARGB(255, 197, 164, 124))
-                  ..fontSize(14.sp) // Menggunakan ScreenUtil
-                  ..margin(right: 20.w) // Menggunakan ScreenUtil
-                  ..fontWeight(FontWeight.normal),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ShowallMateri();
+                  }));
+                },
+                child: Txt(
+                  "show all",
+                  style: mainTextStyle.clone()
+                    ..textColor(Color.fromARGB(255, 197, 164, 124))
+                    ..fontSize(14.sp) // Menggunakan ScreenUtil
+                    ..margin(right: 20.w) // Menggunakan ScreenUtil
+                    ..fontWeight(FontWeight.normal),
+                ),
               ),
             ],
           ),

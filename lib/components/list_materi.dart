@@ -5,11 +5,9 @@ import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class MateriBox extends StatelessWidget {
+class ListMateri extends StatelessWidget {
   final Materi materi;
-  late final double scale;
-
-  MateriBox(this.materi, {this.scale = 1});
+  const ListMateri({Key? key, required this.materi}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +20,9 @@ class MateriBox extends StatelessWidget {
       },
       child: Parent(
         style: kamusStyle.clone()
-          ..width(350.w * scale)
-          ..height(240.h * scale)
+          ..width(MediaQuery.of(context).size.width)
+          ..height(190.h)
+          ..margin(bottom: 15)
           ..border(all: 0.5, color: Color.fromARGB(255, 197, 164, 124)),
         child: Column(
           children: <Widget>[
@@ -34,8 +33,8 @@ class MateriBox extends StatelessWidget {
             //     ..height(130 * scale),
             // ),
             Container(
-              width: MediaQuery.of(context).size.width.w * scale,
-              height: 130.h * scale,
+              width: MediaQuery.of(context).size.width.w,
+              height: 110.h,
               decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(materi.image),
@@ -58,7 +57,7 @@ class MateriBox extends StatelessWidget {
                       child: Text(materi.judul,
                           maxLines: 1,
                           style: TextStyle(
-                              fontSize: 12.sp * scale,
+                              fontSize: 15.sp,
                               fontWeight: FontWeight.bold,
                               overflow: TextOverflow.ellipsis)),
                     ),
@@ -69,7 +68,7 @@ class MateriBox extends StatelessWidget {
                       child: Text(materi.deskripsi1,
                           maxLines: 2,
                           style: TextStyle(
-                              fontSize: 10.sp * scale,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.normal,
                               overflow: TextOverflow.ellipsis)),
                     ),

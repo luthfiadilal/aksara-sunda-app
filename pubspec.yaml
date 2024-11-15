@@ -46,6 +46,9 @@ dependencies:
   path_provider: ^2.1.5
   image_picker: ^1.1.2
   flutter_screenutil: ^5.9.3
+  provider: ^6.1.2
+  flutter_native_splash: ^2.4.2
+  
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +63,15 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+# flutter_native_splash:
+#   color: "#ffffff"
+#   image: "images/logo.png"
+#   icon_background_color: "#fff"
+#   color_dark: "#1A1A1A"
+#   icon_background_color_dark: "#eeeeee"
+#   android: true
+
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -87,6 +99,8 @@ flutter:
     - images/plus.svg
     - images/gallery.svg
     - images/ai.svg
+    - images/logo.png
+    - images/logo.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

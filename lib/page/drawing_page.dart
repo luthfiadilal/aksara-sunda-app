@@ -6,6 +6,7 @@ import 'package:aksara_sunda/bloc/drawing_event.dart';
 import 'package:aksara_sunda/bloc/drawing_state.dart';
 import 'package:aksara_sunda/repository/drawing_repository.dart';
 import 'package:aksara_sunda/services/drawing_service.dart';
+import 'package:aksara_sunda/utils/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:signature/signature.dart';
@@ -100,22 +101,50 @@ class _DrawingPageState extends State<DrawingPage> {
                 Container(
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    child: Column(
                       children: [
-                        IconButton(
-                          icon: Icon(Icons.arrow_left),
-                          onPressed: _previousText,
-                        ),
-                        SizedBox(width: 20),
                         Text(
-                          _textOptions[_selectedIndex],
-                          style: TextStyle(fontSize: 16.sp),
+                          "Pilih Akasara yang ingin kamu tulis",
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                          ),
                         ),
-                        SizedBox(width: 20),
-                        IconButton(
-                          icon: Icon(Icons.arrow_right),
-                          onPressed: _nextText,
+                        SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppColor.primaryColor,
+                              ),
+                              child: IconButton(
+                                icon: Icon(
+                                  Icons.arrow_left,
+                                  size: 30,
+                                  color: Colors.white,
+                                ),
+                                onPressed: _previousText,
+                              ),
+                            ),
+                            SizedBox(width: 20),
+                            Text(
+                              _textOptions[_selectedIndex],
+                              style: TextStyle(fontSize: 20.sp),
+                            ),
+                            SizedBox(width: 20),
+                            Container(
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppColor.primaryColor,
+                              ),
+                              child: IconButton(
+                                icon: Icon(Icons.arrow_right,
+                                    size: 30, color: Colors.white),
+                                onPressed: _nextText,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -132,7 +161,8 @@ class _DrawingPageState extends State<DrawingPage> {
                 Builder(
                   builder: (context) {
                     return Container(
-                      padding: EdgeInsets.only(bottom: 30, right: 20, left: 20),
+                      padding: EdgeInsets.only(
+                          bottom: 30, right: 20, left: 20, top: 15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -144,8 +174,6 @@ class _DrawingPageState extends State<DrawingPage> {
                               },
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
-                                backgroundColor: MaterialStateProperty.all(
-                                    Color.fromARGB(255, 252, 252, 252)),
                                 shape: MaterialStateProperty.all<
                                     RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
