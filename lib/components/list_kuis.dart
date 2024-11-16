@@ -1,24 +1,55 @@
-import 'package:aksara_sunda/utils/question.dart';
+import 'package:aksara_sunda/utils/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:aksara_sunda/utils/question.dart';
 
 class QuizWidget extends StatefulWidget {
   final Question question;
+  final String? selectedOption;
+  final ValueChanged<String?> onAnswerSelected;
 
-  QuizWidget({required this.question});
+  QuizWidget({
+    required this.question,
+    required this.selectedOption,
+    required this.onAnswerSelected,
+  });
 
   @override
   _QuizWidgetState createState() => _QuizWidgetState();
 }
 
 class _QuizWidgetState extends State<QuizWidget> {
-  String? _selectedOption;
+  bool _isAnswered = false; // Menandakan apakah sudah dijawab
+  String? _userSelectedOption; // Menyimpan jawaban pengguna
 
-  // URL dasar untuk gambar
-  final String baseUrl = "https://optimal-composed-ape.ngrok-free.app";
+  bool _isValidImageUrl(String? url) {
+    return url != null &&
+        url.isNotEmpty &&
+        (url.startsWith('http://') || url.startsWith('https://'));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _userSelectedOption = widget.selectedOption;
+    _isAnswered = _userSelectedOption != null; // Set status sudah dijawab
+  }
+
+  @override
+  void didUpdateWidget(QuizWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Update jika selectedOption berubah
+    if (oldWidget.selectedOption != widget.selectedOption) {
+      setState(() {
+        _userSelectedOption = widget.selectedOption;
+        _isAnswered =
+            _userSelectedOption != null; // Update status sudah dijawab
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    print("Question: ${widget.question.questionText}");
     return Card(
       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
       child: Padding(
@@ -26,26 +57,23 @@ class _QuizWidgetState extends State<QuizWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Menampilkan gambar pertanyaan jika ada
-            if (widget.question.images['question'] != null)
-              Image.network(
-                baseUrl + widget.question.images['question']!,
-                height: 100,
-                loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) {
-                    return child; // Gambar berhasil dimuat
-                  } else {
-                    return Center(
-                        child:
-                            CircularProgressIndicator()); // Gambar sedang dimuat
-                  }
-                },
-                errorBuilder: (context, error, stackTrace) {
-                  return Center(
-                      child: Icon(
-                          Icons.error)); // Menampilkan icon error jika gagal
-                },
-              ),
+            // Menampilkan gambar pertanyaan jika ada dan valid
+            _isValidImageUrl(widget.question.images['question'])
+                ? Image.network(
+                    widget.question.images['question']!,
+                    height: 100,
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) {
+                        return child; // Gambar berhasil dimuat
+                      } else {
+                        return Center(child: CircularProgressIndicator());
+                      }
+                    },
+                    errorBuilder: (context, error, stackTrace) {
+                      return SizedBox(); // Menampilkan SizedBox jika gambar tidak valid
+                    },
+                  )
+                : SizedBox(), // Menampilkan SizedBox jika URL tidak valid
             SizedBox(height: 10),
             // Menampilkan teks pertanyaan
             Text(widget.question.questionText, style: TextStyle(fontSize: 18)),
@@ -56,34 +84,71 @@ class _QuizWidgetState extends State<QuizWidget> {
               String optionText = entry.value;
               String? optionImage = widget.question.images['option_$optionKey'];
 
-              return RadioListTile<String>(
-                value: optionKey,
-                groupValue: _selectedOption,
-                title: Text(optionText),
-                // Menampilkan gambar opsi jika ada
-                secondary: optionImage != null
-                    ? Image.network(
-                        baseUrl + optionImage,
-                        width: 50,
-                        height: 50,
-                        fit: BoxFit.cover,
-                        loadingBuilder: (context, child, loadingProgress) {
-                          if (loadingProgress == null) {
-                            return child;
-                          } else {
-                            return Center(child: CircularProgressIndicator());
-                          }
-                        },
-                        errorBuilder: (context, error, stackTrace) {
-                          return Center(child: Icon(Icons.error));
-                        },
-                      )
-                    : null,
-                onChanged: (value) {
-                  setState(() {
-                    _selectedOption = value;
-                  });
-                },
+              return Container(
+                width: MediaQuery.of(context).size.width,
+                height: 70.h,
+                child: Opacity(
+                  opacity: _isAnswered && widget.selectedOption != optionKey
+                      ? 0.5
+                      : 1.0, // Mengatur opacity untuk opsi yang tidak dipilih
+                  child: RadioListTile<String>(
+                    value: optionKey,
+                    groupValue: _userSelectedOption ?? widget.selectedOption,
+                    title: Row(
+                      children: [
+                        Text(optionText), // Teks opsi
+                        SizedBox(width: 8),
+                        // Menampilkan gambar opsi jika ada dan valid
+                        _isValidImageUrl(optionImage)
+                            ? SizedBox(
+                                width: 100,
+                                height: 50,
+                                child: Image.network(
+                                  optionImage!,
+                                  loadingBuilder:
+                                      (context, child, loadingProgress) {
+                                    if (loadingProgress == null) {
+                                      return child;
+                                    } else {
+                                      return Center(
+                                          child: CircularProgressIndicator());
+                                    }
+                                  },
+                                  errorBuilder: (context, error, stackTrace) {
+                                    return SizedBox(); // Menampilkan SizedBox jika gambar tidak valid
+                                  },
+                                ),
+                              )
+                            : SizedBox(), // Menampilkan SizedBox jika URL tidak valid
+                      ],
+                    ),
+                    onChanged: (value) {
+                      if (!_isAnswered) {
+                        setState(() {
+                          _isAnswered = true; // Tandai sebagai sudah dijawab
+                          _userSelectedOption =
+                              value; // Simpan jawaban pengguna
+                        });
+                        widget.onAnswerSelected(
+                            value); // Panggil callback untuk menyimpan jawaban
+                      }
+                    },
+                    // Mengatur warna latar belakang berdasarkan jawaban
+                    tileColor: _isAnswered
+                        ? (optionKey == widget.question.correctAnswer &&
+                                    _userSelectedOption == optionKey
+                                ? Colors.green
+                                    .withOpacity(0.3) // Benar dan dipilih
+                                : (optionKey == _userSelectedOption
+                                    ? Colors.red
+                                        .withOpacity(0.3) // Salah dan dipilih
+                                    : null) // Opsi tidak dipilih
+                            )
+                        : null,
+                    activeColor:
+                        AppColor.primaryColor, // Warna aktif untuk radio button
+                  ),
+                ),
               );
             }).toList(),
           ],

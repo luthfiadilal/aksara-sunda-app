@@ -100,7 +100,10 @@ flutter:
     - images/gallery.svg
     - images/ai.svg
     - images/logo.png
+    - images/logo1.png
+    - images/logo2.png
     - images/logo.svg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

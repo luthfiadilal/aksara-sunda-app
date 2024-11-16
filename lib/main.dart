@@ -11,15 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-void main() async {
-  // WidgetsFlutterBinding.ensureInitialized(); // Pastikan ini tidak dikomentari
-  // FlutterNativeSplash.preserve(widgetsBinding: WidgetsBinding.instance);
-
-  // // Simulasi waktu loading (jika perlu)
-  // await Future.delayed(Duration(seconds: 2));
-
-  // // Menghapus splash screen
-  // FlutterNativeSplash.remove();
+void main() {
   runApp(
     MultiBlocProvider(
       providers: [
@@ -66,7 +58,7 @@ class MyApp extends StatelessWidget {
         ),
         themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
+        home: MainPage(),
       ),
     );
   }
