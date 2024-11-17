@@ -16,7 +16,6 @@ class ShowallMateri extends StatelessWidget {
         title: const Text("Materi"),
       ),
       body: ListView.builder(
-        padding: const EdgeInsets.all(20),
         itemCount: daftarMateri.length,
         itemBuilder: (context, index) {
           return ListMateri(materi: daftarMateri[index]);

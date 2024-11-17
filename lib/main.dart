@@ -1,4 +1,5 @@
 import 'package:aksara_sunda/bloc/image_bloc.dart';
+import 'package:aksara_sunda/models/aksara_view_model.dart';
 import 'package:aksara_sunda/models/kuis_view_model.dart';
 import 'package:aksara_sunda/page/main_page.dart';
 import 'package:aksara_sunda/repository/drawing_repository.dart';
@@ -18,7 +19,10 @@ void main() {
         BlocProvider(create: (context) => ImageBloc(DrawingRepository())),
         ChangeNotifierProvider(
           create: (_) => QuizViewModel(QuizRepository()),
-        )
+        ),
+        ChangeNotifierProvider(
+          create: (_) => AksaraViewModel(),
+        ),
       ],
       child: MyApp(),
     ),

@@ -3,10 +3,15 @@ import 'package:aksara_sunda/components/card_kamus.dart';
 import 'package:aksara_sunda/components/kamus_box.dart';
 import 'package:aksara_sunda/components/list_kamus_box.dart';
 import 'package:aksara_sunda/models/materi_view_model.dart';
+import 'package:aksara_sunda/page/angka_page.dart';
 import 'package:aksara_sunda/page/drawing_page.dart';
+import 'package:aksara_sunda/page/ngalagena.dart';
+import 'package:aksara_sunda/page/rarangken.dart';
 import 'package:aksara_sunda/page/showall_materi.dart';
+import 'package:aksara_sunda/page/swara_page.dart';
 import 'package:aksara_sunda/repository/kamus_repository.dart';
 import 'package:aksara_sunda/styles/container_kamus_styles.dart';
+import 'package:aksara_sunda/utils/aksara.dart';
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -102,12 +107,41 @@ class _HomePageState extends State<HomePage> {
               scrollDirection: Axis.horizontal,
               itemCount: daftarKamus.length,
               itemBuilder: (context, index) {
+                // Debugging: Print semua title
+                print('Title in daftarKamus: ${daftarKamus[index]['title']}');
+
                 return CardKamus(
-                    title: daftarKamus[index]["title"]!,
-                    image: daftarKamus[index]["image"]!,
-                    onTap: () {
-                      if (daftarKamus[index]['title'] == 'Aksara Swara') {}
-                    });
+                  title: daftarKamus[index]["title"]!,
+                  image: daftarKamus[index]["image"]!,
+                  onTap: () {
+                    // Debugging: Print current title
+                    print('Card tapped: ${daftarKamus[index]['title']}');
+
+                    if (daftarKamus[index]['title'] == "Aksara\nSwara") {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return SwaraPage();
+                      }));
+                    } else if (daftarKamus[index]['title'] ==
+                        "Aksara\nNgalagena") {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Ngalagena();
+                      }));
+                    } else if (daftarKamus[index]['title'] ==
+                        "Aksara\nRarangken") {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Rarangken();
+                      }));
+                    } else if (daftarKamus[index]['title'] == "Aksara\nAngka") {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return AngkaPage();
+                      }));
+                    }
+                  },
+                );
               },
             ),
           ),

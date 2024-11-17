@@ -5,9 +5,9 @@ import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ListMateri extends StatelessWidget {
+class ListMateriKuispage extends StatelessWidget {
   final Materi materi;
-  const ListMateri({Key? key, required this.materi}) : super(key: key);
+  const ListMateriKuispage({Key? key, required this.materi}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +18,11 @@ class ListMateri extends StatelessWidget {
             MaterialPageRoute(
                 builder: (context) => DetailMateriPage(materi: materi)));
       },
-      child: Container(
-        margin: EdgeInsets.only(bottom: 5.h),
-        width: MediaQuery.of(context).size.width.w,
-        height: 250.w,
+      child: Parent(
+        style: kamusStyle
+          ..clone()
+          ..width(300.w)
+          ..height(110.h),
         child: Column(
           children: <Widget>[
             // Parent(
@@ -32,11 +33,15 @@ class ListMateri extends StatelessWidget {
             // ),
             Container(
               width: MediaQuery.of(context).size.width.w,
-              height: 140.h,
+              height: 100.h,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(materi.image),
                   fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20.r),
+                  topRight: Radius.circular(20.r),
                 ),
               ),
             ),
