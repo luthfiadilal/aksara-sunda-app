@@ -20,64 +20,75 @@ class MateriBox extends StatelessWidget {
             MaterialPageRoute(
                 builder: (context) => DetailMateriPage(materi: materi)));
       },
-      child: Parent(
-        style: kamusStyle.clone()
-          ..width(350.w * scale)
-          ..height(240.h * scale)
-          ..border(all: 0.5, color: Color.fromARGB(255, 197, 164, 124)),
-        child: Column(
-          children: <Widget>[
-            // Parent(
-            //   style: containerImageStyle.clone()
-            //     ..background.image(path: materi.image, fit: BoxFit.cover)
-            //     ..width(MediaQuery.of(context).size.width * scale)
-            //     ..height(130 * scale),
-            // ),
-            Container(
-              width: MediaQuery.of(context).size.width.w * scale,
-              height: 130.h * scale,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(materi.image),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20.r),
-                    topRight: Radius.circular(20.r),
-                  )),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Container(
-                      margin: EdgeInsets.only(bottom: 5),
-                      child: Text(materi.judul,
-                          maxLines: 1,
-                          style: TextStyle(
-                              fontSize: 12.sp * scale,
-                              fontWeight: FontWeight.bold,
-                              overflow: TextOverflow.ellipsis)),
+      child: Container(
+        child: Container(
+          width: 350.w * scale,
+          height: 240.h * scale,
+          margin: EdgeInsets.only(top: 10, right: 16, left: 16),
+          decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.background,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                    color: Theme.of(context).colorScheme.shadow,
+                    spreadRadius: -5,
+                    blurRadius: 10,
+                    offset: Offset(2, 4))
+              ]),
+          child: Column(
+            children: <Widget>[
+              // Parent(
+              //   style: containerImageStyle.clone()
+              //     ..background.image(path: materi.image, fit: BoxFit.cover)
+              //     ..width(MediaQuery.of(context).size.width * scale)
+              //     ..height(130 * scale),
+              // ),
+              Container(
+                width: MediaQuery.of(context).size.width.w * scale,
+                height: 130.h * scale,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(materi.image),
+                      fit: BoxFit.cover,
                     ),
-                  ),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Container(
-                      child: Text(materi.deskripsi1,
-                          maxLines: 2,
-                          style: TextStyle(
-                              fontSize: 10.sp * scale,
-                              fontWeight: FontWeight.normal,
-                              overflow: TextOverflow.ellipsis)),
-                    ),
-                  ),
-                ],
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(16.r),
+                      topRight: Radius.circular(16.r),
+                    )),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Container(
+                        margin: EdgeInsets.only(bottom: 5),
+                        child: Text(materi.judul,
+                            maxLines: 1,
+                            style: TextStyle(
+                                fontSize: 12.sp * scale,
+                                fontWeight: FontWeight.bold,
+                                overflow: TextOverflow.ellipsis)),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Container(
+                        child: Text(materi.deskripsi1,
+                            maxLines: 2,
+                            style: TextStyle(
+                                fontSize: 10.sp * scale,
+                                fontWeight: FontWeight.normal,
+                                overflow: TextOverflow.ellipsis)),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

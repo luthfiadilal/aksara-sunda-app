@@ -81,7 +81,7 @@ class KuisPage extends StatelessWidget {
           child: Container(
             margin: EdgeInsets.only(left: 16.w, right: 16.w),
             child: Text(
-              "Recomendasi Materi",
+              "Rekomendasi Materi",
               style: TextStyle(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.bold,

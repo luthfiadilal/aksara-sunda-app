@@ -18,11 +18,20 @@ class ListMateriKuispage extends StatelessWidget {
             MaterialPageRoute(
                 builder: (context) => DetailMateriPage(materi: materi)));
       },
-      child: Parent(
-        style: kamusStyle
-          ..clone()
-          ..width(300.w)
-          ..height(110.h),
+      child: Container(
+        width: 300.w,
+        height: 110.h,
+        margin: EdgeInsets.only(bottom: 5.h, top: 10.w, right: 16.w),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(14.r),
+            color: Theme.of(context).colorScheme.background,
+            boxShadow: [
+              BoxShadow(
+                  color: Theme.of(context).colorScheme.shadow,
+                  spreadRadius: -5,
+                  blurRadius: 10,
+                  offset: Offset(2, 4))
+            ]),
         child: Column(
           children: <Widget>[
             // Parent(
@@ -40,8 +49,8 @@ class ListMateriKuispage extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20.r),
-                  topRight: Radius.circular(20.r),
+                  topLeft: Radius.circular(16.r),
+                  topRight: Radius.circular(16.r),
                 ),
               ),
             ),
