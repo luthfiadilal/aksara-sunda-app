@@ -106,7 +106,7 @@ class _DrawingPageState extends State<DrawingPage> {
                         Text(
                           "Pilih Akasara yang ingin kamu tulis",
                           style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 18.sp,
                           ),
                         ),
                         SizedBox(height: 10),
@@ -130,7 +130,10 @@ class _DrawingPageState extends State<DrawingPage> {
                             SizedBox(width: 20),
                             Text(
                               _textOptions[_selectedIndex],
-                              style: TextStyle(fontSize: 20.sp),
+                              style: TextStyle(
+                                  fontSize: 20.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColor.primaryColor),
                             ),
                             SizedBox(width: 20),
                             Container(

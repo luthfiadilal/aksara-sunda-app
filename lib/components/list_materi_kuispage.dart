@@ -21,7 +21,7 @@ class ListMateriKuispage extends StatelessWidget {
       child: Container(
         width: 300.w,
         height: 110.h,
-        margin: EdgeInsets.only(bottom: 5.h, top: 10.w, right: 16.w),
+        margin: EdgeInsets.only(bottom: 5.h, top: 10.w, right: 25.w),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14.r),
             color: Theme.of(context).colorScheme.background,
@@ -75,7 +75,7 @@ class ListMateriKuispage extends StatelessWidget {
                     alignment: Alignment.topLeft,
                     child: Container(
                       child: Text(materi.deskripsi1,
-                          maxLines: 2,
+                          maxLines: 3,
                           style: TextStyle(
                               fontSize: 12.sp,
                               fontWeight: FontWeight.normal,

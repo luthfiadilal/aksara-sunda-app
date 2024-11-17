@@ -24,13 +24,14 @@ class KuisPage extends StatelessWidget {
             style: TextStyle(
               fontSize: 24.sp,
               fontWeight: FontWeight.bold,
+              color: AppColor.primaryColor,
             ),
           ),
         ),
         Container(
           margin: EdgeInsets.only(top: 10.h, left: 16.w, right: 16.w),
           child: Text(
-            "Selamat datang di kuis yang akan menguji kemampuan dan wawasanmu! Jadikan setiap pertanyaan sebagai peluang untuk belajar, dan jangan takut untuk mencoba lagi jika belum sempurna. Tetap semangat, karena belajar itu adalah perjalanan, bukan tujuan akhir!",
+            "Selamat datang di kuis untuk menguji wawasanmu! Manfaatkan setiap pertanyaan untuk belajar, tetap semangat, dan ingat, belajar adalah perjalanan, bukan tujuan akhir!.",
             style: TextStyle(
               fontSize: 16.sp,
               fontWeight: FontWeight.normal,
@@ -91,7 +92,7 @@ class KuisPage extends StatelessWidget {
         ),
         Flexible(
             child: ListView.builder(
-                padding: EdgeInsets.only(left: 12, right: 10),
+                padding: EdgeInsets.only(left: 18, right: 10, bottom: 30),
                 scrollDirection: Axis.horizontal,
                 itemCount: daftarMateri.length,
                 itemBuilder: (context, index) {

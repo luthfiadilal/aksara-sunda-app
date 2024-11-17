@@ -105,6 +105,10 @@ flutter:
     - images/logo1.png
     - images/logo2.png
     - images/logo.svg
+    - images/almura.PNG
+    - images/almura2.PNG
+    - images/angracana.PNG
+    - images/lies.PNG
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

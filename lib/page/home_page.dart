@@ -50,36 +50,14 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  // Future<void> _checkFirstLaunch() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   bool? isFirstLaunch = prefs.getBool('isFirstLaunch');
-
-  //   if (isFirstLaunch == null || isFirstLaunch) {
-  //     // Tampilkan tooltip
-  //     TooltipManager.showTooltip(context);
-
-  //     // Set isFirstLaunch menjadi false
-  //     await prefs.setBool('isFirstLaunch', false);
-  //   }
-  // }
-
   Future<void> _checkFirstLaunch() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool? isFirstLaunch = prefs.getBool('isFirstLaunch');
-    bool? isSecondTooltipShown = prefs.getBool('isSecondTooltipShown');
 
     if (isFirstLaunch == null || isFirstLaunch) {
-      print("TOOLTIP PERTAMA");
-      // Tampilkan tooltip pertama
       TooltipManager.showTooltip(context);
-      await prefs.setBool('isFirstLaunch', false);
-    }
 
-    if (isSecondTooltipShown == null || isSecondTooltipShown) {
-      print("TOOLTIP KEDUA");
-      // Tampilkan tooltip kedua
-      SecondTooltipManager.showTooltip(context);
-      await prefs.setBool('isSecondTooltipShown', false);
+      await prefs.setBool('isFirstLaunch', false);
     }
   }
 

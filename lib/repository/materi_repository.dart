@@ -69,6 +69,62 @@ class MateriRepository {
         link: 'https://www.youtube.com/watch?v=0f9LolhrhYs&t=166s',
         image: 'images/belajar_aksara.PNG',
       ),
+      Materi(
+        judul:
+            'BELAJAR MENULIS AKSARA SUNDA || TRIK CEPAT HAFAL DENGAN RUMUS RAHASIA (HURUF VOKAL) PART 1',
+        deskripsi1:
+            'Assalamualaikum warahmatullahi wabarakatuh. Halo sobat Almoera! Kembali lagi bersama saya di Aura Channel. Langsung saja, dalam pembelajaran ini, saya akan membagi menjadi lima tahap. Yang pertama, mempelajari huruf vokal. Tahap yang kedua adalah mempelajari huruf konsonan. Tahap yang ketiga mempelajari tanda vokalisasi dalam aksara Sunda. Tahap yang keempat adalah latihan menulis, dan tahap yang kelima adalah latihan membaca. Masing-masing tahap itu ada dalam video yang berbeda. Jadi, di video kali ini, kita hanya akan mempelajari huruf vokalnya dulu secara rinci, secara jelas, dan menggunakan trik-trik ciptaan saya sendiri.',
+        deskripsi2:
+            'Oh ya, bagi sobat pemula atau yang belum paham banget tentang bahasa Sunda, perlu diketahui bahwa huruf vokal dalam bahasa Sunda itu ada beberapa. Coba ada tuh, cukup! Kalau dalam bahasa Indonesia kan cuma a, i, u, e, o. Itu ada tambahan selain yang a, i, u, e, o, ada juga yang e dan o. Jadi ini ya, a, i, u, e, o, dan u. Huruf vokal dalam bahasa Indonesia kalau di dalam bahasa Sunda ada yang namanya "hai". Habis itu, ada huruf dan itu dibacanya bukan "eh", tapi kalau dalam bahasa Sunda, yang ini jadi "jadi". Soalnya, ini masih banyak orang, teman saya sendiri, yang masih kebingungan dengan perbedaan ini. Nah, ini akan saya jelaskan juga di video yang lain ya, video khusus.',
+        deskripsi3:
+            'Oke, dari ke-7 huruf vokal ini, kita akan mulai menulis. Sebenarnya, bagaimana sih? Tapi kita harus menggunakan trik yang pertama agar semakin cepat dalam menguasai atau dalam menghafalkan. Oke, aksara Sunda ini banyak banget mirip-mirip ya antara huruf yang satu dengan huruf yang lain. Oleh karena itu, saya menyusunnya menggunakan patokan-patokan khusus agar semakin memudahkan kita dalam mengingat dan menghafalkannya. Jadi, di sini kita tidak menggunakan urutan a, i, u, e, o, untuk mulai menghafalkan, tetapi saya akan menggunakan urutan ini. Yang pertama yang harus dihafal atau dilatih diingat-ingat itu huruf begini nih.',
+        deskripsi4:
+            'Nah, maaf ya kalau agak jelek karena nulis ini, spidol agak susah juga sih. Maksudnya, ini huruf A itu ada patokannya biar kita mudah mengingat. Karena metode saja sendiri, kalau dalam mempelajari sesuatu atau mengingat sesuatu, menghafal sesuatu, itu harus ada patokan. Baik itu menghafal ayat-ayat Al-Quran atau menghafal rumus-rumus matematika dan lain-lainnya, itu harus ada patokan biar kita semakin mudah mempelajari dan mengingatnya. Untuk huruf A sendiri, saya menggunakan patokannya adalah angka 3. ',
+        link: 'https://www.youtube.com/watch?v=eK-S2bNnOfs&t=15s',
+        image: 'images/almura.PNG',
+      ),
+      Materi(
+        judul:
+            'BELAJAR MENULIS AKSARA SUNDA || TRIK CEPAT HAFAL DENGAN RUMUS RAHASIA (HURUF KONSONAN) PART 2',
+        deskripsi1:
+            'Assalamualaikum warahmatullahi wabarakatuh. Halo sobat Almoera! Kembali lagi bersama saya di Alam Rencana. Nah, saya sekarang akan melanjutkan video pembelajaran aksara Sunda part 2-nya dan akan membahas tentang huruf konsonan. Sebelum itu, jangan lupa sobat Almoera untuk menekan tombol subscribe agar tidak ketinggalan info-info pembelajaran lainnya di channel ini. Oke, langsung saja ya!. Yang perlu sobat ketahui tentang huruf konsonan dalam aksara Sunda, atau yang disebut aksara Ngalagena, ini sudah otomatis seperti ini. Nah, Kak terasa sakit, jadi bukan huruf advertise of puppets, bukan seperti itu. Tapi memang sudah termasuk huruf A. Nanti untuk bagaimana vokal ini bisa berubah jadi I, U, dan sebagainya, itu nanti akan dijelaskan di part ketiga tentang tanda vokalisasi. Oke, sekarang membahas dulu bahwa huruf konsonan aksara Sunda ini saya sudah membagi-bagi menjadi beberapa kelompok untuk memudahkan dalam proses menghafal serta membedakan. Karena dalam aksara Sunda ini banyak sekali aksara-aksara yang mirip.',
+        deskripsi2:
+            'Di kelompok pertama, itu ada kelompok angka 7. Jatuh aksara yang memang patoknya ke angka 7 atau mirip dengan ketujuh. Contohnya, yang pertama itu ada huruf K. Penulisannya adalah memang seperti angka 7 biasa, yaitu dua kali Kak Tini. Kemudian huruf R, huruf R itu masuk juga ke ketujuh. Ini untuk roof rack, cara penulisannya seperti itu. Topi kemudian ak71 selalu seperti ada gadis yang mencekik. Aturannya bahwa garis yang atas, yang topi ini, harus sejajar. Jangan seperti ini, ini panjang soalnya. Nah, jangan seperti ini, tapi memang harus sejajar.',
+        deskripsi3:
+            'Huruf yang ketiga yang mematok juga ke angka 7 adalah T. Ini selesai menulis di papan tulis, pulsa itu angka 7. Angka 7 lalu diberi garis tengahnya sama seperti huruf K. Coba perbedaannya, garis di tengahnya saja. Dan ingat kembali bahwa garis yang di tengah dengan garis yang atasnya atau kepalanya itu harus sama atau sejajar. Kemudian yang terakhir ada huruf X. Atau saat tahu gimana ya nyebutnya, itu adalah kemiripan dari huruf T. Perbedaannya, itu huruf X ini digabung total. Nah, jadi digabung ya. Kalau huruf J, itu kan misah ada celah. Kalau huruf X, itu digabung.',
+        deskripsi4:
+            'Tipsnya adalah sobat untuk bisa membedakan harus menulis latihan terus. Misalnya satu halaman, kemudian per baris, yaitu harus berbeda-beda urutan. Besarnya baris pertama urutannya seperti ini, kemudian penulisan baris keduanya itu misalnya R dulu, baru snare drum, ska rusak, juga baris ketiga, dan seterusnya. Oke, lanjut kepada kelompok 2. Kelompok 2 ini adalah kelompok Marga Tepuk. Mengapa saya menyebutnya Marga Tepuk? Karena memang bentuknya itu seperti magnetuk atau seperti huruf U.',
+        link: 'https://www.youtube.com/watch?v=8DTp-xXIIKo',
+        image: 'images/almura2.PNG',
+      ),
+      Materi(
+        judul:
+            'AKSARA SUNDA (BAGIAN 2) || MENGENAL DAN LATIHAN MENULIS AKSARA SUNDA [LENGKAP]',
+        deskripsi1:
+            'Assalamualaikum warahmatullahi wabarakatuh. Sampurasun! Bertemu lagi dengan saya, Aldi Erdiansyah, di channel Racana KW. Pada kesempatan kali ini, saya akan membahas dan melanjutkan materi tentang aksara Sunda. Namun sebelumnya, izinkan saya menggunakan bahasa Indonesia supaya orang-orang yang kurang mengerti bahasa Sunda bisa mengikuti. Karena ini kan materi aksara Sunda, jadi siapa tahu ada orang yang di luar Sunda tapi tertarik untuk mengerti bagaimana sih cara menulis aksara Sunda. Bagaimana sih sistem atau kaidah-kaidah atau aturan-aturan yang harus dilaksanakan ketika kita menulis aksara Sunda.',
+        deskripsi2:
+            'Oke, sebelum kita memulai, alangkah baiknya kita mengingat kembali ya di video sebelumnya. Bagi yang belum nonton, di video sebelumnya tentang materi aksara Sunda yang bagian teorinya saja, silakan bisa tonton link-nya dari atas. Aksara Sunda, aksara no mimiti dipakai ke urang Sunda, nyaéta aksara Pallawa. Karena aksara Sunda kursi dipakai sejak abad ke-14, jadi aksara Sunda itu pernah dipakai semenjak abad ke-14. Nah, aksara Sunda ke Asep bangun aksara silabis, artinya 21 huruf itu adalah satu suku kata. Itulah aksara silabis.',
+        deskripsi3:
+            'B dengan aksara fonemis lebih lengkapnya lagi, silakan tonton video saya sebelumnya tentang materi aksara Sunda bagian teorinya. Yuk, sekarang kita mulai! Oke, aksara Sunda baku. Kenapa pembahasan tentang aksara Sunda baku? Karena memang yang menjadi standar aksara Sunda yang diajarkan di tingkat SMP, atau pun SMA, ataupun SD sekalipun, itu aksara Sunda baku. Jadi, teman-teman, aksara Sunda itu sebenarnya banyak. Mulai dari aksara Sunda abad awal-awalnya, abad ke-13 sampai abad ke-20, itu banyak. Mulai dari aksara Pallawa sampai Cacarakan, sampai sekarang, asal sudah baku sebanyak. Tapi yang diajarkan di sekolah-sekolah yaitu aksara Sunda baku yang menjadi standarisasi pendidikan bahasa Sunda di Jawa Barat.',
+        deskripsi4:
+            'Oke, aksara Sunda itu dibagi menjadi 4 bagian. Yang pertama, suara; yang kedua, Ngalagena; yang ketiga, Rarangken; yang keempat, angka. Nah, apa saja sih arti dari empat jenis aksara Sunda ini? Yang pertama, aksara Swara. Aksara Swara itu adalah aksara vokal. Saya sering menyebutnya aksara vokal mandiri. Vokalisasi di dalam bahasa Sunda itu beda dengan vokalisasi di bahasa Indonesia. Di bahasa Indonesia ada 5 huruf: a, e, i, o, u; sedangkan di aksara Sunda ini ada tujuh: a, e, i, o, u, é, dan é. Nah, suara ini biasanya digunakan sebagai vokal mandiri atau vokal yang tidak ada keterikatan dengan huruf konsonan.',
+        link: 'https://www.youtube.com/watch?v=e7UMHDjtnpg',
+        image: 'images/angracana.PNG',
+      ),
+      Materi(
+        judul:
+            'Aksara Sunda (Aksara Swara, Ngalagena, Rarangken, Jeung Angka)|| Kaidah Nulis Aksara Sunda',
+        deskripsi1:
+            'Assalamualaikum warahmatullahi taala wabarakatuh. Sampurasun! Alhamdulillah, kita masih bertemu di Desa Ketapang. Dalam pembelajaran Basa Sunda, masih bersama ibu Riswahyuni. Dinamakan Rino Endah, yaitu materinya aksara Sunda. Aksara Sunda teh sapatos kumaha huruf Natal nu kumaha wae. Kumaha carana nulisna? Yuk, kita sasarengan dalam video pembelajaran ini, Sang kandidat biasa mengajarkan nulis aksara Sunda luyu saran kaidah-kaidahna. Mangga, Wilujeng! Ini lowongan di tanah Yoona, tidak kedah uninga bahwa karena kompetensi dasar, IPK sarung tujuanmu baris di hotel disapa. Rantosna, hidup diajar benar aksara Sunda nu kahiji dituntut sudah dia.',
+        deskripsi2:
+            'Analisis bentuk sarang tipe aksara Sunda luyu dengan kaidah-kaidahnya. Kalian tieta tidak di akhir kedah tiasa nulis nama hidup sawang-sawang, dan menggunakan aksara Sunda. Lajeng, kedah tia sangat transliterasi kecap atau kalimah tina aksara latin. Karena aksara Sunda atau sebaliknya, ajeng nur komunitas tidak sekedar. Dia sangat kreasikan aksara Sunda dina wangun kaligrafi.',
+        deskripsi3:
+            'Akan tetapi, tujuan ilke nah kontolkuli detik saparantos. Nah, diajar dinten ayeuna salah sangka didepanku. Ngonoo, kangkung, apa lu? Kumaha aksara Sunda teh? Ayeuna urang diajar sasarannya aksara Sunda baku. Nah, abutai aksara Sunda baku dan aksara Sunda teh Ruby-Ruby. Nya, abad-abad kepengker, orang Sunda teh sono karena aksara. Sangkan aksara Sunda ialah betah dunia pendidikan. Ayah aksara Sunda anu tos dibukukeun, anu tos lostina, standarisasi like diajangkeun ditakol Soepomo. Aksara Sunda baku heartbeat, tapi sopir sebut aksara Sunda kaganga.',
+        deskripsi4:
+            'Aksara vokal nu ngawengku 7 suara atau rapid 7 vokal. Aya aksara Ngalagena, jumlahnya ayah 18 konsonan asli sarang 7 konsonan dina bahasa serapan. Rajanya rarangken nujum lahna ayat 13. Lajeng, muka-muka saya angka jumlahnya 10. Lukuma hio, 4 jenis aksara Sunda teh. Anda orang gua rasa sarang nu kahiji. Bina aksara Sunda teh, nyaeta ayah aksara Swara, yang atanapi aksi vokal. Bianto Isna ayah huruf a, i, u, e, o, sareng nah ya y.',
+        link: 'https://www.youtube.com/watch?v=uwMZoxT7Z3M',
+        image: 'images/lies.PNG',
+      ),
 
       // Tambahkan materi lainnya sesuai kebutuhan
     ];
