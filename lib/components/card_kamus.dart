@@ -65,11 +65,11 @@ class CardKamus extends StatelessWidget {
             Align(
               alignment: Alignment.topLeft,
               child: Padding(
-                padding: const EdgeInsets.only(left: 8, top: 12),
+                padding: const EdgeInsets.only(left: 18, top: 12),
                 child: SvgPicture.asset(
                   image,
-                  width: 60.w,
-                  height: 60.h,
+                  width: 54.w,
+                  height: 54.h,
                 ),
               ),
             ),

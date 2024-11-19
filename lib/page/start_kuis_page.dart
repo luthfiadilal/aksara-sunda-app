@@ -1,7 +1,9 @@
 import 'package:aksara_sunda/components/list_kuis.dart';
 import 'package:aksara_sunda/models/kuis_view_model.dart';
+import 'package:aksara_sunda/page/hasilkuis_page.dart';
 import 'package:aksara_sunda/utils/answer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 class StartKuisPage extends StatefulWidget {
@@ -41,12 +43,51 @@ class _StartKuisPageState extends State<StartKuisPage> {
     });
   }
 
+  // Fungsi untuk menghitung skor
+  int _calculateScore() {
+    int score = 0;
+    final quizViewModel = Provider.of<QuizViewModel>(context, listen: false);
+
+    for (var answer in _answers) {
+      final question = quizViewModel.questions
+          .firstWhere((q) => q.id.toString() == answer.questionId);
+      if (answer.selectedOption == question.correctAnswer) {
+        score += 10; // Tambah 10 poin untuk jawaban yang benar
+      }
+    }
+    return score;
+  }
+
   @override
   Widget build(BuildContext context) {
     final quizViewModel = Provider.of<QuizViewModel>(context);
 
     return Scaffold(
       appBar: AppBar(title: Text('Kuis')),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        onPressed: () {
+          final score = _calculateScore();
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => HasilkuisPage(
+                score: score,
+                onMainMenu: () {
+                  Navigator.of(context).popUntil((route) => route.isFirst);
+                },
+              ),
+            ),
+          );
+        },
+        icon: Icon(
+          Icons.check,
+          color: Theme.of(context).colorScheme.background,
+        ),
+        label: Text('Selesai',
+            style: TextStyle(
+                fontSize: 15.sp,
+                color: Theme.of(context).colorScheme.background)),
+      ),
       body: quizViewModel.isLoading
           ? Center(child: CircularProgressIndicator())
           : ListView.builder(

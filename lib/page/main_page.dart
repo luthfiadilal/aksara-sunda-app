@@ -105,7 +105,7 @@ class _MainPageState extends State<MainPage> {
                   },
                   child: AnimatedScale(
                     scale: currentPageIndex == 0 ? 1.5 : 1.3,
-                    duration: const Duration(milliseconds: 200),
+                    duration: const Duration(milliseconds: 600),
                     child: SvgPicture.asset(
                       "images/home_line.svg",
                       color: currentPageIndex == 0
@@ -123,7 +123,7 @@ class _MainPageState extends State<MainPage> {
                   },
                   child: AnimatedScale(
                     scale: currentPageIndex == 1 ? 1.5 : 1.3,
-                    duration: const Duration(milliseconds: 200),
+                    duration: const Duration(milliseconds: 600),
                     child: SvgPicture.asset(
                       "images/task.svg",
                       color: currentPageIndex == 1

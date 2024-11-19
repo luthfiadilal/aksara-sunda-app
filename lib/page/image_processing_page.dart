@@ -39,7 +39,7 @@ class _ImageProcessingPageState extends State<ImageProcessingPage> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   content: Text(
-                    "Prediksi: ${state.prediction}",
+                    "Aksara: ${state.prediction}",
                     style: TextStyle(fontSize: 20.sp),
                   ),
                   actions: <Widget>[

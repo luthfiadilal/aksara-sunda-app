@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/services.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-// import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class DetailMateriPage extends StatefulWidget {
   final Materi materi;
@@ -20,16 +19,14 @@ class _DetailMateriPageState extends State<DetailMateriPage> {
   @override
   void initState() {
     super.initState();
-
     _controller = YoutubePlayerController(
-      initialVideoId: YoutubePlayer.convertUrlToId(widget.materi.link)!,
+      initialVideoId: YoutubePlayer.convertUrlToId(widget.materi.link) ?? '',
       flags: YoutubePlayerFlags(
         autoPlay: false,
         enableCaption: true,
         isLive: false,
       ),
     );
-
     _controller.addListener(_onPlayerStateChange);
   }
 
@@ -73,10 +70,7 @@ class _DetailMateriPageState extends State<DetailMateriPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              YoutubePlayer(
-                controller: _controller,
-                showVideoProgressIndicator: true,
-              ),
+              player, // Menampilkan player dari YoutubePlayerBuilder
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(

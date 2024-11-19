@@ -78,7 +78,9 @@ class _HomePageState extends State<HomePage> {
             child: CoachPoint(
               initial: "1",
               child: Parent(
-                style: mainContainerStyle,
+                style: mainContainerStyle
+                  ..clone()
+                  ..height(110.h),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[

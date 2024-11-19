@@ -10,11 +10,11 @@ class KamusRepository {
         },
         {
           'title': 'Aksara\nRarangken',
-          'image': 'images/aksara1.svg', // Ganti dengan gambar yang sesuai
+          'image': 'images/aksara3.svg', // Ganti dengan gambar yang sesuai
         },
         {
           'title': 'Aksara\nAngka',
-          'image': 'images/aksara2.svg', // Ganti dengan gambar yang sesuai
+          'image': 'images/aksara5.svg', // Ganti dengan gambar yang sesuai
         },
       ];
 }

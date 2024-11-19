@@ -4,6 +4,7 @@ class Aksara {
   final String arti;
   final String tipe;
   final String imageUrl;
+  final String audioUrl;
 
   Aksara({
     required this.id,
@@ -11,6 +12,7 @@ class Aksara {
     required this.arti,
     required this.tipe,
     required this.imageUrl,
+    required this.audioUrl,
   });
 
   factory Aksara.fromJson(Map<String, dynamic> json) {
@@ -20,6 +22,7 @@ class Aksara {
       arti: json['arti'],
       tipe: json['tipe'],
       imageUrl: json['image_url'],
+      audioUrl: json['suara_url'],
     );
   }
 }

@@ -42,8 +42,8 @@ class _QuizWidgetState extends State<QuizWidget> {
     if (oldWidget.selectedOption != widget.selectedOption) {
       setState(() {
         _userSelectedOption = widget.selectedOption;
-        _isAnswered =
-            _userSelectedOption != null; // Update status sudah dijawab
+        // _isAnswered =
+        //     _userSelectedOption != null; // Update status sudah dijawab
       });
     }
   }
@@ -87,67 +87,75 @@ class _QuizWidgetState extends State<QuizWidget> {
               return Container(
                 width: MediaQuery.of(context).size.width,
                 height: 70.h,
-                child: Opacity(
-                  opacity: _isAnswered && widget.selectedOption != optionKey
-                      ? 0.5
-                      : 1.0, // Mengatur opacity untuk opsi yang tidak dipilih
-                  child: RadioListTile<String>(
-                    value: optionKey,
-                    groupValue: _userSelectedOption ?? widget.selectedOption,
-                    title: Row(
-                      children: [
-                        Text(optionText), // Teks opsi
-                        SizedBox(width: 8),
-                        // Menampilkan gambar opsi jika ada dan valid
-                        _isValidImageUrl(optionImage)
-                            ? SizedBox(
-                                width: 100,
-                                height: 50,
-                                child: Image.network(
-                                  optionImage!,
-                                  loadingBuilder:
-                                      (context, child, loadingProgress) {
-                                    if (loadingProgress == null) {
-                                      return child;
-                                    } else {
-                                      return Center(
-                                          child: CircularProgressIndicator());
-                                    }
-                                  },
-                                  errorBuilder: (context, error, stackTrace) {
-                                    return SizedBox(); // Menampilkan SizedBox jika gambar tidak valid
-                                  },
-                                ),
-                              )
-                            : SizedBox(), // Menampilkan SizedBox jika URL tidak valid
-                      ],
-                    ),
-                    onChanged: (value) {
-                      if (!_isAnswered) {
-                        setState(() {
-                          _isAnswered = true; // Tandai sebagai sudah dijawab
-                          _userSelectedOption =
-                              value; // Simpan jawaban pengguna
-                        });
-                        widget.onAnswerSelected(
-                            value); // Panggil callback untuk menyimpan jawaban
-                      }
-                    },
-                    // Mengatur warna latar belakang berdasarkan jawaban
-                    tileColor: _isAnswered
-                        ? (optionKey == widget.question.correctAnswer &&
-                                    _userSelectedOption == optionKey
-                                ? Colors.green
-                                    .withOpacity(0.3) // Benar dan dipilih
-                                : (optionKey == _userSelectedOption
-                                    ? Colors.red
-                                        .withOpacity(0.3) // Salah dan dipilih
-                                    : null) // Opsi tidak dipilih
+                // child: Opacity(
+                //   opacity: _userSelectedOption != null &&
+                //           _userSelectedOption != optionKey
+                //       ? 0.5
+                //       : 1.0, // Mengatur opacity untuk opsi yang tidak dipilih
+                //   // opacity: _isAnswered && widget.selectedOption != optionKey
+                //   //     ? 0.5
+                //   //     : 1.0, // Mengatur opacity untuk opsi yang tidak dipilih
+                //   child:
+                child: RadioListTile<String>(
+                  value: optionKey,
+                  groupValue: _userSelectedOption ?? widget.selectedOption,
+                  title: Row(
+                    children: [
+                      Text(optionText), // Teks opsi
+                      SizedBox(width: 8),
+                      // Menampilkan gambar opsi jika ada dan valid
+                      _isValidImageUrl(optionImage)
+                          ? SizedBox(
+                              width: 100,
+                              height: 50,
+                              child: Image.network(
+                                optionImage!,
+                                loadingBuilder:
+                                    (context, child, loadingProgress) {
+                                  if (loadingProgress == null) {
+                                    return child;
+                                  } else {
+                                    return Center(
+                                        child: CircularProgressIndicator());
+                                  }
+                                },
+                                errorBuilder: (context, error, stackTrace) {
+                                  return SizedBox(); // Menampilkan SizedBox jika gambar tidak valid
+                                },
+                              ),
                             )
-                        : null,
-                    activeColor:
-                        AppColor.primaryColor, // Warna aktif untuk radio button
+                          : SizedBox(), // Menampilkan SizedBox jika URL tidak valid
+                    ],
                   ),
+                  onChanged: (value) {
+                    setState(() {
+                      _userSelectedOption = value; // Simpan jawaban pengguna
+                    });
+                    widget.onAnswerSelected(
+                        value); // Panggil callback untuk menyimpan jawaban
+                    // if (!_isAnswered) {
+                    //   setState(() {
+                    //     _isAnswered = true; // Tandai sebagai sudah dijawab
+                    //     _userSelectedOption = value; // Simpan jawaban pengguna
+                    //   });
+                    //   widget.onAnswerSelected(
+                    //       value); // Panggil callback untuk menyimpan jawaban
+                    // }
+                  },
+                  // Mengatur warna latar belakang berdasarkan jawaban
+                  // tileColor: _isAnswered
+                  //     ? (optionKey == widget.question.correctAnswer &&
+                  //                 _userSelectedOption == optionKey
+                  //             ? Colors.green
+                  //                 .withOpacity(0.3) // Benar dan dipilih
+                  //             : (optionKey == _userSelectedOption
+                  //                 ? Colors.red
+                  //                     .withOpacity(0.3) // Salah dan dipilih
+                  //                 : null) // Opsi tidak dipilih
+                  //         )
+                  //     : null,
+                  activeColor:
+                      AppColor.primaryColor, // Warna aktif untuk radio button
                 ),
               );
             }).toList(),

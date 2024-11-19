@@ -92,7 +92,7 @@ class _DrawingPageState extends State<DrawingPage> {
       create: (context) => DrawingBloc(_controller, drawingRepository),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Gambar dan Capture'),
+          title: Text('Belajar Tulis'),
         ),
         body: Stack(
           children: [

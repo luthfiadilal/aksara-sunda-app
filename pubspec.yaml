@@ -51,6 +51,8 @@ dependencies:
   flutter_launcher_icons: ^0.14.1
   shared_preferences: ^2.3.3
   coachmaker: ^0.2.1
+  gap: ^3.0.1
+  audioplayers: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -93,6 +95,8 @@ flutter:
     - images/download.jpeg
     - images/aksara1.svg
     - images/aksara2.svg
+    - images/aksara3.svg
+    - images/aksara5.svg
     - images/sejarah_aksara_sunda.PNG
     - images/mengupas_sejarah.PNG
     - images/aksara_sunda_buhun.PNG
@@ -109,6 +113,11 @@ flutter:
     - images/almura2.PNG
     - images/angracana.PNG
     - images/lies.PNG
+    - images/ion_mic.svg
+    - images/sound.svg
+    - images/happy.png
+    - images/netral.png
+    - images/sad.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
