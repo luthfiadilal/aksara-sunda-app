@@ -2,6 +2,7 @@ import 'package:aksara_sunda/utils/materi.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class DetailMateriPage extends StatefulWidget {
@@ -64,7 +65,10 @@ class _DetailMateriPageState extends State<DetailMateriPage> {
       ),
       builder: (context, player) => Scaffold(
         appBar: AppBar(
-          title: Text(widget.materi.judul),
+          title: Text(
+            widget.materi.judul,
+            style: GoogleFonts.poppins(),
+          ),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -78,15 +82,15 @@ class _DetailMateriPageState extends State<DetailMateriPage> {
                   children: [
                     Text(
                       widget.materi.judul,
-                      style: TextStyle(
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.bold,
+                      style: GoogleFonts.poppins(
+                        fontSize: 19.sp,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                     SizedBox(height: 10.h),
                     Text(
                       widget.materi.deskripsi1,
-                      style: TextStyle(fontSize: 16.sp),
+                      style: GoogleFonts.poppins(fontSize: 16.sp),
                     ),
                   ],
                 ),

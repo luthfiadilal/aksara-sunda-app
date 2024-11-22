@@ -12,6 +12,7 @@ import 'package:aksara_sunda/page/swara_page.dart';
 import 'package:aksara_sunda/repository/kamus_repository.dart';
 import 'package:aksara_sunda/styles/container_kamus_styles.dart';
 import 'package:aksara_sunda/utils/aksara.dart';
+import 'package:aksara_sunda/utils/app_color.dart';
 import 'package:aksara_sunda/utils/second_tooltip_manager.dart';
 import 'package:aksara_sunda/utils/tooltip_manager.dart';
 import 'package:coachmaker/coachmaker.dart';
@@ -20,6 +21,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:aksara_sunda/styles/container_banner_styles.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
@@ -88,12 +90,13 @@ class _HomePageState extends State<HomePage> {
                       child: Padding(
                         padding: EdgeInsets.only(
                             right: 20.w), // Menggunakan ScreenUtil
-                        child: Txt(
-                          "Ayo Belajar Menulis Aksara Sunda",
-                          style: mainTextStyle
-                            ..clone()
-                            ..textColor(Colors.white),
-                        ),
+                        child: Text("Ayo Belajar Menulis Aksara Sunda",
+                            style: GoogleFonts.poppins(
+                              color: Colors.white,
+                              fontSize: 19.sp,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            maxLines: 2),
                       ),
                     ),
                     Parent(
@@ -114,11 +117,10 @@ class _HomePageState extends State<HomePage> {
             children: [
               Container(
                 margin: EdgeInsets.only(left: 20),
-                child: Text(
-                  "Kamus",
-                  style:
-                      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.normal),
-                ),
+                child: Text("Kamus",
+                    style: GoogleFonts.poppins(
+                      fontSize: 17.sp,
+                    )),
               ),
             ],
           ),
@@ -131,7 +133,7 @@ class _HomePageState extends State<HomePage> {
                 itemCount: daftarKamus.length,
                 itemBuilder: (context, index) {
                   // Debugging: Print semua title
-                  print('Title in daftarKamus: ${daftarKamus[index]['title']}');
+                  // print('Title in daftarKamus: ${daftarKamus[index]['title']}');
 
                   return CardKamus(
                     title: daftarKamus[index]["title"]!,
@@ -175,11 +177,10 @@ class _HomePageState extends State<HomePage> {
             children: [
               Container(
                 margin: EdgeInsets.only(left: 20),
-                child: Text(
-                  "Materi",
-                  style:
-                      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.normal),
-                ),
+                child: Text("Materi",
+                    style: GoogleFonts.poppins(
+                      fontSize: 17.sp,
+                    )),
               ),
               GestureDetector(
                 onTap: () {
@@ -189,13 +190,13 @@ class _HomePageState extends State<HomePage> {
                 },
                 child: CoachPoint(
                   initial: '4',
-                  child: Txt(
-                    "show all",
-                    style: mainTextStyle.clone()
-                      ..textColor(Color.fromARGB(255, 197, 164, 124))
-                      ..fontSize(14.sp) // Menggunakan ScreenUtil
-                      ..margin(right: 20.w) // Menggunakan ScreenUtil
-                      ..fontWeight(FontWeight.normal),
+                  child: Container(
+                    margin: EdgeInsets.only(right: 20.w),
+                    child: Text("show all",
+                        style: GoogleFonts.poppins(
+                          fontSize: 14.sp,
+                          color: AppColor.primaryColor,
+                        )),
                   ),
                 ),
               ),

@@ -5,6 +5,8 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class AngkaPage extends StatefulWidget {
@@ -40,7 +42,11 @@ class _AngkaPageState extends State<AngkaPage> {
         viewModel.aksaras.where((aksara) => aksara.tipe == 'Angka').toList();
 
     return Scaffold(
-      appBar: AppBar(title: Text('Aksara Angka')),
+      appBar: AppBar(
+          title: Text(
+        'Aksara Angka',
+        style: GoogleFonts.poppins(),
+      )),
       body: Consumer<AksaraViewModel>(
         builder: (context, viewModel, child) {
           if (viewModel.aksaras.isEmpty) {
@@ -79,20 +85,21 @@ class _AngkaPageState extends State<AngkaPage> {
                               fit: BoxFit.cover,
                             ),
                           ),
+                          Gap(16.w),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Text(
                                 aksara.aksara,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
                                   fontSize: 22.sp,
                                   color: AppColor.primaryColor,
                                 ),
                               ),
                               Text(
                                 aksara.arti,
-                                style: TextStyle(fontSize: 16.sp),
+                                style: GoogleFonts.poppins(fontSize: 16.sp),
                               ),
                             ],
                           ),

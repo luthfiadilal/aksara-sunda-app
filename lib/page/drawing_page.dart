@@ -9,6 +9,7 @@ import 'package:aksara_sunda/services/drawing_service.dart';
 import 'package:aksara_sunda/utils/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:signature/signature.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -92,7 +93,10 @@ class _DrawingPageState extends State<DrawingPage> {
       create: (context) => DrawingBloc(_controller, drawingRepository),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Belajar Tulis'),
+          title: Text(
+            'Belajar Tulis',
+            style: GoogleFonts.poppins(),
+          ),
         ),
         body: Stack(
           children: [
@@ -105,8 +109,8 @@ class _DrawingPageState extends State<DrawingPage> {
                       children: [
                         Text(
                           "Pilih Akasara yang ingin kamu tulis",
-                          style: TextStyle(
-                            fontSize: 18.sp,
+                          style: GoogleFonts.poppins(
+                            fontSize: 17.sp,
                           ),
                         ),
                         SizedBox(height: 10),
@@ -130,9 +134,9 @@ class _DrawingPageState extends State<DrawingPage> {
                             SizedBox(width: 20),
                             Text(
                               _textOptions[_selectedIndex],
-                              style: TextStyle(
+                              style: GoogleFonts.poppins(
                                   fontSize: 20.sp,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w600,
                                   color: AppColor.primaryColor),
                             ),
                             SizedBox(width: 20),
@@ -186,11 +190,13 @@ class _DrawingPageState extends State<DrawingPage> {
                                             Color.fromARGB(255, 197, 164, 124)),
                                   ),
                                 ),
+                                padding: MaterialStateProperty.all(
+                                    EdgeInsets.symmetric(vertical: 10.h)),
                               ),
                               child: Text('Hapus',
-                                  style: TextStyle(
-                                      color:
-                                          Color.fromARGB(255, 197, 164, 124))),
+                                  style: GoogleFonts.poppins(
+                                      color: Color.fromARGB(255, 197, 164, 124),
+                                      fontSize: 16.sp)),
                             ),
                           ),
                           SizedBox(width: 20.w),
@@ -213,9 +219,12 @@ class _DrawingPageState extends State<DrawingPage> {
                                       borderRadius:
                                           BorderRadius.circular(10.0.r)),
                                 ),
+                                padding: MaterialStateProperty.all(
+                                    EdgeInsets.symmetric(vertical: 10.h)),
                               ),
-                              child: Text('Cek',
-                                  style: TextStyle(color: Colors.white)),
+                              child: Text('Periksa',
+                                  style: GoogleFonts.poppins(
+                                      color: Colors.white, fontSize: 16.sp)),
                             ),
                           ),
                         ],
@@ -245,7 +254,8 @@ class _DrawingPageState extends State<DrawingPage> {
                             return AlertDialog(
                               title: Text("Selamat!"),
                               content: Text(
-                                  "Kamu sudah bisa menulis aksara sunda ($selectedText)"),
+                                  "Kamu sudah bisa menulis aksara sunda ($selectedText)",
+                                  style: TextStyle(fontSize: 16.sp)),
                               actions: [
                                 TextButton(
                                   child: Text(
@@ -268,7 +278,10 @@ class _DrawingPageState extends State<DrawingPage> {
                           builder: (BuildContext context) {
                             return AlertDialog(
                               title: Text("Coba Lagi"),
-                              content: Text("Coba lagi dan terus belajar"),
+                              content: Text(
+                                "Coba lagi dan terus belajar",
+                                style: TextStyle(fontSize: 16.sp),
+                              ),
                               actions: [
                                 TextButton(
                                   child: Text("OK"),

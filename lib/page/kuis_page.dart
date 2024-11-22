@@ -5,6 +5,7 @@ import 'package:aksara_sunda/utils/app_color.dart';
 import 'package:aksara_sunda/utils/materi.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class KuisPage extends StatelessWidget {
   const KuisPage({super.key});
@@ -21,9 +22,9 @@ class KuisPage extends StatelessWidget {
           margin: EdgeInsets.only(top: 10.h, left: 16.w, right: 16.w),
           child: Text(
             "Ayo asah pengetahuanmu dengan mengerjakan kuis ini!",
-            style: TextStyle(
-              fontSize: 24.sp,
-              fontWeight: FontWeight.bold,
+            style: GoogleFonts.poppins(
+              fontSize: 22.sp,
+              fontWeight: FontWeight.w600,
               color: AppColor.primaryColor,
             ),
           ),
@@ -31,9 +32,9 @@ class KuisPage extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(top: 10.h, left: 16.w, right: 16.w),
           child: Text(
-            "Selamat datang di kuis untuk menguji wawasanmu! Manfaatkan setiap pertanyaan untuk belajar, tetap semangat, dan ingat, belajar adalah perjalanan, bukan tujuan akhir!.",
-            style: TextStyle(
-              fontSize: 16.sp,
+            "Selamat datang di kuis! Uji wawasanmu, nikmati setiap pertanyaan, dan ingat, belajar adalah perjalanan yang penuh makna!",
+            style: GoogleFonts.poppins(
+              fontSize: 15.sp,
               fontWeight: FontWeight.normal,
             ),
           ),
@@ -42,8 +43,8 @@ class KuisPage extends StatelessWidget {
           margin: EdgeInsets.only(top: 10.h, left: 16.w, right: 16.w),
           child: Text(
             "Klik tombol dibawah ini untuk memulai kuis",
-            style: TextStyle(
-              fontSize: 16.sp,
+            style: GoogleFonts.poppins(
+              fontSize: 14.sp,
               fontWeight: FontWeight.normal,
               color: AppColor.secondaryColor,
             ),
@@ -53,7 +54,7 @@ class KuisPage extends StatelessWidget {
           width: MediaQuery.of(context).size.width.w,
           height: 50.w,
           margin:
-              EdgeInsets.only(top: 10.h, left: 16.w, right: 16.w, bottom: 10.h),
+              EdgeInsets.only(top: 20.h, left: 16.w, right: 16.w, bottom: 10.h),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColor.primaryColor,
@@ -69,9 +70,9 @@ class KuisPage extends StatelessWidget {
             },
             child: Text(
               "Mulai Kuis",
-              style: TextStyle(
+              style: GoogleFonts.poppins(
                 fontSize: 16.sp,
-                fontWeight: FontWeight.bold,
+                // fontWeight: FontWeight.w600,
                 color: Colors.white,
               ),
             ),
@@ -83,9 +84,9 @@ class KuisPage extends StatelessWidget {
             margin: EdgeInsets.only(left: 16.w, right: 16.w),
             child: Text(
               "Rekomendasi Materi",
-              style: TextStyle(
+              style: GoogleFonts.poppins(
                 fontSize: 16.sp,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),

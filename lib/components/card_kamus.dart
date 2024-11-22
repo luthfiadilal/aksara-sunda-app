@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CardKamus extends StatelessWidget {
   final String title;
@@ -49,9 +50,9 @@ class CardKamus extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(right: 8),
                           child: Text(title,
-                              style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.bold,
+                              style: GoogleFonts.poppins(
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w600,
                               ),
                               textDirection: TextDirection.rtl,
                               maxLines: 2),

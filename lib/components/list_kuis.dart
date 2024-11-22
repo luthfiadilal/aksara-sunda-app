@@ -2,6 +2,7 @@ import 'package:aksara_sunda/utils/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:aksara_sunda/utils/question.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class QuizWidget extends StatefulWidget {
   final Question question;
@@ -51,6 +52,7 @@ class _QuizWidgetState extends State<QuizWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 0,
       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -76,7 +78,8 @@ class _QuizWidgetState extends State<QuizWidget> {
                 : SizedBox(), // Menampilkan SizedBox jika URL tidak valid
             SizedBox(height: 10),
             // Menampilkan teks pertanyaan
-            Text(widget.question.questionText, style: TextStyle(fontSize: 18)),
+            Text(widget.question.questionText,
+                style: GoogleFonts.poppins(fontSize: 15.sp)),
             SizedBox(height: 10),
             // Menampilkan opsi jawaban
             ...widget.question.options.entries.map((entry) {
@@ -101,7 +104,12 @@ class _QuizWidgetState extends State<QuizWidget> {
                   groupValue: _userSelectedOption ?? widget.selectedOption,
                   title: Row(
                     children: [
-                      Text(optionText), // Teks opsi
+                      Text(
+                        optionText,
+                        style: GoogleFonts.poppins(
+                          fontSize: 12.sp,
+                        ),
+                      ), // Teks opsi
                       SizedBox(width: 8),
                       // Menampilkan gambar opsi jika ada dan valid
                       _isValidImageUrl(optionImage)

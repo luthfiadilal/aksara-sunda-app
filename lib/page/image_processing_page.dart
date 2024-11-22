@@ -6,6 +6,7 @@ import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,7 +25,10 @@ class _ImageProcessingPageState extends State<ImageProcessingPage> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 197, 164, 124),
         foregroundColor: Colors.white,
-        title: const Text("Image Processing"),
+        title: Text(
+          "Image Processing",
+          style: GoogleFonts.poppins(),
+        ),
       ),
       body: BlocListener<ImageBloc, ImageState>(
         listener: (context, state) {
@@ -36,17 +40,17 @@ class _ImageProcessingPageState extends State<ImageProcessingPage> {
                 return AlertDialog(
                   title: Text(
                     "Hasil Prediksi",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: GoogleFonts.poppins(fontWeight: FontWeight.w600),
                   ),
                   content: Text(
                     "Aksara: ${state.prediction}",
-                    style: TextStyle(fontSize: 20.sp),
+                    style: GoogleFonts.poppins(fontSize: 17.sp),
                   ),
                   actions: <Widget>[
                     TextButton(
                       child: Text(
                         "Tutup",
-                        style: TextStyle(
+                        style: GoogleFonts.poppins(
                           color: Color.fromARGB(255, 197, 164, 124),
                         ),
                       ),
@@ -113,7 +117,7 @@ class _ImageProcessingPageState extends State<ImageProcessingPage> {
                                               margin: EdgeInsets.only(top: 80),
                                               child: Text(
                                                 "Pilih gambar",
-                                                style: TextStyle(
+                                                style: GoogleFonts.poppins(
                                                     color: Colors.white,
                                                     fontSize: 17.sp),
                                               ),
@@ -178,15 +182,15 @@ class _ImageProcessingPageState extends State<ImageProcessingPage> {
             ),
             Expanded(
               child: Container(
-                padding: EdgeInsets.only(top: 50, left: 20, right: 20),
+                padding: EdgeInsets.only(top: 20, left: 20, right: 20),
                 width: MediaQuery.of(context).size.width.w,
                 color: Color.fromARGB(255, 197, 164, 124),
                 child: Column(
                   children: <Widget>[
                     Text(
-                      "Pilih Gambar Yang Ingin Di Proses, atau ambil langsung foto dari kamera",
-                      style: TextStyle(
-                        fontSize: 18.sp,
+                      "Unggah gambar aksara Sunda, atau ambil foto langsung dengan kamera untuk melihat hasil prediksinya!",
+                      style: GoogleFonts.poppins(
+                        fontSize: 17.sp,
                         color: Colors.white,
                       ),
                       textAlign: TextAlign.center,
@@ -225,8 +229,8 @@ class _ImageProcessingPageState extends State<ImageProcessingPage> {
                                 SizedBox(width: 15.w),
                                 Text(
                                   "Galeri",
-                                  style: TextStyle(
-                                      fontSize: 18.sp,
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 16.sp,
                                       color:
                                           Color.fromARGB(255, 197, 164, 124)),
                                 ),
@@ -266,8 +270,8 @@ class _ImageProcessingPageState extends State<ImageProcessingPage> {
                                 SizedBox(width: 15.w),
                                 Text(
                                   "Kamera",
-                                  style: TextStyle(
-                                      fontSize: 18.sp,
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 16.sp,
                                       color:
                                           Color.fromARGB(255, 197, 164, 124)),
                                 ),
@@ -338,8 +342,8 @@ class _ImageProcessingPageState extends State<ImageProcessingPage> {
                                     SizedBox(width: 15.w),
                                     Text(
                                       "Proses",
-                                      style: TextStyle(
-                                          fontSize: 18.sp,
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 16.sp,
                                           color: Color.fromARGB(
                                               255, 197, 164, 124)),
                                     ),

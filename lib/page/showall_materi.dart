@@ -2,6 +2,7 @@ import 'package:aksara_sunda/components/list_materi.dart';
 import 'package:aksara_sunda/repository/materi_repository.dart';
 import 'package:aksara_sunda/utils/materi.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ShowallMateri extends StatelessWidget {
   const ShowallMateri({super.key});
@@ -13,7 +14,10 @@ class ShowallMateri extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Materi"),
+        title: Text(
+          "Materi",
+          style: GoogleFonts.poppins(),
+        ),
       ),
       body: ListView.builder(
         itemCount: daftarMateri.length,

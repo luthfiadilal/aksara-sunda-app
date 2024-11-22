@@ -4,6 +4,7 @@ import 'package:aksara_sunda/utils/materi.dart';
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MateriBox extends StatelessWidget {
   final Materi materi;
@@ -65,12 +66,15 @@ class MateriBox extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       child: Container(
                         margin: EdgeInsets.only(bottom: 5),
-                        child: Text(materi.judul,
-                            maxLines: 1,
-                            style: TextStyle(
-                                fontSize: 12.sp * scale,
-                                fontWeight: FontWeight.bold,
-                                overflow: TextOverflow.ellipsis)),
+                        child: Text(
+                          materi.judul,
+                          maxLines: 1,
+                          style: GoogleFonts.poppins(
+                            fontSize: 12.sp * scale,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ),
                     Align(
@@ -78,10 +82,10 @@ class MateriBox extends StatelessWidget {
                       child: Container(
                         child: Text(materi.deskripsi1,
                             maxLines: 2,
-                            style: TextStyle(
-                                fontSize: 10.sp * scale,
-                                fontWeight: FontWeight.normal,
-                                overflow: TextOverflow.ellipsis)),
+                            style: GoogleFonts.poppins(
+                              fontSize: 10.sp * scale,
+                            ),
+                            overflow: TextOverflow.ellipsis),
                       ),
                     ),
                   ],

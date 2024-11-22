@@ -4,6 +4,7 @@ import 'package:aksara_sunda/page/hasilkuis_page.dart';
 import 'package:aksara_sunda/utils/answer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class StartKuisPage extends StatefulWidget {
@@ -63,7 +64,11 @@ class _StartKuisPageState extends State<StartKuisPage> {
     final quizViewModel = Provider.of<QuizViewModel>(context);
 
     return Scaffold(
-      appBar: AppBar(title: Text('Kuis')),
+      appBar: AppBar(
+          title: Text(
+        'Kuis',
+        style: GoogleFonts.poppins(),
+      )),
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Theme.of(context).colorScheme.primary,
         onPressed: () {
@@ -84,7 +89,7 @@ class _StartKuisPageState extends State<StartKuisPage> {
           color: Theme.of(context).colorScheme.background,
         ),
         label: Text('Selesai',
-            style: TextStyle(
+            style: GoogleFonts.poppins(
                 fontSize: 15.sp,
                 color: Theme.of(context).colorScheme.background)),
       ),

@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 
 class QuizRepository {
   final String apiUrl =
-      'https://optimal-composed-ape.ngrok-free.app/api/quiz/random-questions';
+      'http://api-backend.aksa-sunda.my.id/api/quiz/random-questions';
 
   Future<List<Question>> fetchQuestions() async {
     final response = await http.get(Uri.parse(apiUrl));

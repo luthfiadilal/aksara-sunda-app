@@ -2,6 +2,7 @@ import 'package:aksara_sunda/utils/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HasilkuisPage extends StatelessWidget {
   final int score;
@@ -14,16 +15,36 @@ class HasilkuisPage extends StatelessWidget {
   }) : super(key: key);
 
   // Fungsi untuk menentukan ikon berdasarkan skor
-  Widget _getIcon() {
+  // Widget _getIcon() {
+  //   if (score >= 80) {
+  //     return Image.asset(
+  //       "images/happy.png",
+  //       fit: BoxFit.cover,
+  //     ); // Ikon bahagia
+  //   } else if (score >= 50) {
+  //     return Image.asset("images/netral.png", fit: BoxFit.cover); // Ikon netral
+  //   } else {
+  //     return Image.asset("images/sad.png", fit: BoxFit.cover); // Ikon sedih
+  //   }
+  // }
+
+  Widget _getIcon(BuildContext context) {
     if (score >= 80) {
-      return Image.asset(
-        "images/happy.png",
-        fit: BoxFit.cover,
-      ); // Ikon bahagia
+      return Icon(
+        Icons.sentiment_very_satisfied, // Ikon bahagia
+        size: 100.0,
+        color: Theme.of(context).colorScheme.primary, // Ukuran ikon
+      );
     } else if (score >= 50) {
-      return Image.asset("images/netral.png", fit: BoxFit.cover); // Ikon netral
+      return Icon(Icons.sentiment_neutral, // Ikon netral
+          size: 100.0,
+          color: Theme.of(context).colorScheme.primary // Ukuran ikon
+          );
     } else {
-      return Image.asset("images/sad.png", fit: BoxFit.cover); // Ikon sedih
+      return Icon(Icons.sentiment_dissatisfied, // Ikon sedih
+          size: 100.0,
+          color: Theme.of(context).colorScheme.primary // Ukuran ikon
+          );
     }
   }
 
@@ -68,7 +89,10 @@ class HasilkuisPage extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Hasil Kuis"),
+          title: Text(
+            "Hasil Kuis",
+            style: GoogleFonts.poppins(),
+          ),
           automaticallyImplyLeading: false,
         ),
         body: Center(
@@ -80,31 +104,31 @@ class HasilkuisPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(width: 100.w, height: 100.w, child: _getIcon()),
+                Container(
+                    width: 100.w, height: 100.w, child: _getIcon(context)),
                 SizedBox(height: 10.h),
                 Text(
                   _getMessage(),
-                  style: TextStyle(
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.bold,
+                  style: GoogleFonts.poppins(
+                    fontSize: 22.sp,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 SizedBox(height: 10.h),
                 Text(
                   _getMotivationMessage(),
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 18.sp,
+                  style: GoogleFonts.poppins(
+                    fontSize: 17.sp,
                     color: Colors.grey[600],
                   ),
                 ),
                 SizedBox(height: 20.h),
                 Text(
                   "Skor kamu: $score",
-                  style: TextStyle(
-                    fontSize: 32.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                  style: GoogleFonts.poppins(
+                    fontSize: 26.sp,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 SizedBox(height: 30.h),
@@ -114,12 +138,13 @@ class HasilkuisPage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.r),
                     ),
-                    padding: EdgeInsets.all(14.h),
+                    padding: EdgeInsets.only(
+                        left: 40.w, right: 40.w, top: 10.h, bottom: 10.h),
                   ),
                   onPressed: onMainMenu,
                   child: Text(
-                    "Kembali ke Menu Utama",
-                    style: TextStyle(
+                    "Kembali",
+                    style: GoogleFonts.poppins(
                         fontSize: 16.sp,
                         color: Theme.of(context).colorScheme.background),
                   ),

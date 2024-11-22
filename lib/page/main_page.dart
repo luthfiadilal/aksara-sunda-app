@@ -8,6 +8,7 @@ import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MainPageApp extends StatelessWidget {
   const MainPageApp({super.key});
@@ -70,7 +71,10 @@ class _MainPageState extends State<MainPage> {
       ),
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.background,
-        title: Text("Aksara Sunda"),
+        title: Text(
+          "Aksara Sunda",
+          style: GoogleFonts.getFont('Poppins'),
+        ),
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(

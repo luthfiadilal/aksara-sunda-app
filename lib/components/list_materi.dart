@@ -4,6 +4,7 @@ import 'package:aksara_sunda/utils/materi.dart';
 import 'package:division/division.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ListMateri extends StatelessWidget {
   final Materi materi;
@@ -51,10 +52,11 @@ class ListMateri extends StatelessWidget {
                       margin: EdgeInsets.only(bottom: 5),
                       child: Text(materi.judul,
                           maxLines: 1,
-                          style: TextStyle(
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.bold,
-                              overflow: TextOverflow.ellipsis)),
+                          style: GoogleFonts.poppins(
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          overflow: TextOverflow.ellipsis),
                     ),
                   ),
                   Align(
@@ -62,10 +64,10 @@ class ListMateri extends StatelessWidget {
                     child: Container(
                       child: Text(materi.deskripsi1,
                           maxLines: 2,
-                          style: TextStyle(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.normal,
-                              overflow: TextOverflow.ellipsis)),
+                          style: GoogleFonts.poppins(
+                            fontSize: 12.sp,
+                          ),
+                          overflow: TextOverflow.ellipsis),
                     ),
                   ),
                 ],

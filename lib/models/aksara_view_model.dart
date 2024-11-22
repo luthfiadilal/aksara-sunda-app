@@ -11,6 +11,17 @@ class AksaraViewModel extends ChangeNotifier {
   Future<void> loadAksara() async {
     try {
       _aksaras = await _repository.fetchAksara();
+
+      // _aksaras = _aksaras.map((aksara) {
+      //   return Aksara(
+      //     id: aksara.id,
+      //     aksara: aksara.aksara,
+      //     tipe: aksara.tipe,
+      //     arti: aksara.arti,
+      //     imageUrl: Uri.decodeFull(aksara.imageUrl),
+      //     audioUrl: Uri.decodeFull(aksara.audioUrl),
+      //   );
+      // }).toList();
       notifyListeners();
     } catch (error) {
       print('Error fetching aksara: $error');
